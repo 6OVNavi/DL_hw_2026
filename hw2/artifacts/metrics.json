@@ -1,0 +1,85 @@
+{
+  "track": "nlp",
+  "model": "cointegrated/rubert-tiny2",
+  "revision": "e8ed3b0c8bbf4fb6984c3de043bf7d2f4e5969ae",
+  "dataset": "RCC-MSU/collection3",
+  "classes": [
+    "LOC",
+    "ORG",
+    "PER"
+  ],
+  "n_train": 9301,
+  "n_val": 2153,
+  "n_test": 1922,
+  "params_total": 29098303,
+  "baseline": {
+    "majority": {
+      "f1_micro": 0.5613437195715676,
+      "f1_macro": 0.5785510074917143,
+      "precision": 0.5625762381068553,
+      "recall": 0.5601165897498178
+    },
+    "random_head": {
+      "f1_micro": 0.0380824055031558,
+      "f1_macro": 0.035254710988307,
+      "precision": 0.022296034876479135,
+      "recall": 0.13043478260869565
+    }
+  },
+  "final": {
+    "f1_micro": 0.9317536714796989,
+    "f1_macro": 0.9290260296760774,
+    "precision": 0.9202827888834715,
+    "recall": 0.9435141214696325,
+    "token_f1": 0.9548404727744757,
+    "per_type": {
+      "LOC": {
+        "precision": 0.9475908706677938,
+        "recall": 0.9540425531914893,
+        "f1-score": 0.9508057675996607,
+        "support": 1175
+      },
+      "ORG": {
+        "precision": 0.8489263803680982,
+        "recall": 0.8813694267515924,
+        "f1-score": 0.86484375,
+        "support": 1256
+      },
+      "PER": {
+        "precision": 0.9578947368421052,
+        "recall": 0.9853503184713376,
+        "f1-score": 0.9714285714285714,
+        "support": 1570
+      }
+    }
+  },
+  "ablation": {
+    "setting": "freeze",
+    "full": {
+      "f1_micro": 0.928605654048874,
+      "f1_macro": 0.9262792877547099,
+      "precision": 0.9160954857007799,
+      "recall": 0.9414622297789653,
+      "seconds": 49.735722485999986,
+      "trainable": 29098303
+    },
+    "freeze": {
+      "f1_micro": 0.6147704590818363,
+      "f1_macro": 0.596307815015719,
+      "precision": 0.6319569120287253,
+      "recall": 0.598494049064853,
+      "seconds": 18.465136885999982,
+      "trainable": 2191
+    }
+  },
+  "errors": {
+    "correct": 3876,
+    "boundary": 161,
+    "type": 54,
+    "missed": 26,
+    "spurious": 115
+  },
+  "device": "Tesla T4",
+  "train_time_sec": 49.735722485999986,
+  "fast_mode": false
+}
